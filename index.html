@@ -5,109 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GT3.0 Sistema Operativo</title>
   <style>
-    body {
-      background-color: #1c1c1c;
-      color: #cccccc;
-      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    #intro, #container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 25px;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: #d4af37;
-      text-align: center;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    button {
-      background-color: #2a2a2a;
-      color: #cccccc;
-      border: 1px solid #444444;
-      border-radius: 6px;
-      padding: 12px 20px;
-      font-size: 14px;
-      cursor: pointer;
-      margin: 5px;
-      transition: background-color 0.2s ease;
-    }
-
-    button:hover {
-      background-color: #3a3a3a;
-    }
-
-    section {
-      background-color: #1c1c1c;
-      border: 1px solid #444444;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-    }
-
-    h2, h3 {
-      color: #d4af37;
-      margin-bottom: 15px;
-    }
-
-    label {
-      display: block;
-      margin-top: 12px;
-      font-weight: bold;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      font-size: 14px;
-      margin-top: 6px;
-      background-color: #2a2a2a;
-      color: #cccccc;
-      border: 1px solid #444444;
-      border-radius: 4px;
-    }
-
-    #montoSugerido {
-      background-color: #2a2a2a;
-      border: 1px solid #444444;
-      padding: 12px;
-      border-radius: 6px;
-      margin: 15px 0;
-      font-size: 15px;
-      color: #d4af37;
-      font-weight: bold;
-    }
-
-    #listaOperaciones li {
-      background-color: #2c2c2c;
-      padding: 10px;
-      margin-bottom: 6px;
-      border-left: 4px solid #d4af37;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-
-    #resumenSesion {
-      background-color: #2a2a2a;
-      border: 1px solid #444444;
-      padding: 15px;
-      border-radius: 6px;
-      font-size: 16px;
-      color: #cccccc;
-      margin-top: 20px;
-    }
+    body { background-color: #1c1c1c; color: #cccccc; font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; margin: 0; padding: 0; }
+    #intro, #container { max-width: 900px; margin: auto; padding: 40px 25px; }
+    h1 { font-size: 28px; margin-bottom: 15px; color: #d4af37; text-align: center; }
+    p { font-size: 16px; line-height: 1.6; text-align: center; margin-bottom: 30px; }
+    button { background-color: #2a2a2a; color: #cccccc; border: 1px solid #444444; border-radius: 6px; padding: 12px 20px; font-size: 14px; cursor: pointer; margin: 5px; transition: background-color 0.2s ease; }
+    button:hover { background-color: #3a3a3a; }
+    section { background-color: #1c1c1c; border: 1px solid #444444; padding: 20px; margin-bottom: 30px; border-radius: 8px; }
+    h2, h3 { color: #d4af37; margin-bottom: 15px; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input, select { width: 100%; padding: 10px; font-size: 14px; margin-top: 6px; background-color: #2a2a2a; color: #cccccc; border: 1px solid #444444; border-radius: 4px; }
+    #montoSugerido { background-color: #2a2a2a; border: 1px solid #444444; padding: 12px; border-radius: 6px; margin: 15px 0; font-size: 15px; color: #d4af37; font-weight: bold; }
+    #listaOperaciones li { background-color: #2c2c2c; padding: 10px; margin-bottom: 6px; border-left: 4px solid #d4af37; border-radius: 4px; font-size: 14px; }
+    #resumenSesion { background-color: #2a2a2a; border: 1px solid #d4af37; padding: 18px; border-radius: 8px; font-size: 17px; color: #cccccc; margin-top: 25px; }
   </style>
 </head>
 <body>
@@ -166,8 +76,8 @@
       <input type="text" id="idConsulta" placeholder="🔍 ID para historial" />
       <button onclick="consultarHistorial()">Consultar historial</button>
       <div id="resultadoConsulta"></div>
-
-      <div id="resumenSesion"></div> <!-- ⬅️ Panel de resumen dentro del tablero -->
+      <h2>🧾 Resumen final de sesión</h2>
+      <div id="resumenSesion"></div>
     </section>
 
     <section id="registroOperaciones" style="display:none;">
