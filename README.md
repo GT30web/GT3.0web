@@ -31,7 +31,7 @@ GT3.0 busca que el trader mantenga coherencia entre su capital, sus objetivos y 
 
 ## 🔐 Autoría y visión
 
-GT3.0 es trazado por [Facundo](https://github.com/facublogg), como parte de una visión de trading consciente, modular y mentor. El sistema se ofrece como base evolutiva para quienes buscan no sólo operar, sino operar con sentido.
+GT3.0 fue realizado como parte de una visión de trading consciente, modular y mentor. El sistema se ofrece como base evolutiva para quienes buscan no sólo operar, sino operar con sentido.
 
 ---
 
