@@ -5,127 +5,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GT3.0 Sistema Operativo</title>
   <style>
-    body { background-color: #1c1c1c; color: #cccccc; font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; margin: 0; padding: 0; }
-    #intro, #container { max-width: 900px; margin: auto; padding: 40px 25px; }
-    h1 { font-size: 28px; margin-bottom: 15px; color: #d4af37; text-align: center; }
+    body {
+      background-color: #1c1c1c;
+      color: #cccccc;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 { font-size: 28px; color: #d4af37; text-align: center; margin: 20px 0; }
     h2, h3 { color: #d4af37; margin-bottom: 15px; }
-    p, li { font-size: 16px; line-height: 1.6; }
-    button { background-color: #2a2a2a; color: #cccccc; border: 1px solid #444444; border-radius: 6px; padding: 12px 20px; font-size: 14px; cursor: pointer; margin: 10px 5px 0; transition: background-color 0.2s ease; }
+    button {
+      background-color: #2a2a2a;
+      color: #cccccc;
+      border: 1px solid #444444;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 10px 5px 0;
+    }
     button:hover { background-color: #3a3a3a; }
-    section { background-color: #1c1c1c; border: 1px solid #444444; padding: 20px; margin-bottom: 30px; border-radius: 8px; }
-    label { display: block; margin-top: 12px; font-weight: bold; }
-    input, select { width: 100%; padding: 10px; font-size: 14px; margin-top: 6px; background-color: #2a2a2a; color: #cccccc; border: 1px solid #444444; border-radius: 4px; }
-    #montoSugerido { background-color: #2a2a2a; border: 1px solid #444444; padding: 12px; border-radius: 6px; margin: 15px 0; font-size: 15px; color: #d4af37; font-weight: bold; }
-    #listaOperaciones li { background-color: #2c2c2c; padding: 10px; margin-bottom: 6px; border-left: 4px solid #d4af37; border-radius: 4px; font-size: 14px; }
-    #resumenSesion { background-color: #2a2a2a; border: 1px solid #d4af37; padding: 18px; border-radius: 8px; font-size: 17px; color: #cccccc; margin-top: 25px; }
-    #readmeContenido ul { list-style-type: disc; margin-left: 25px; }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      background-color: #2a2a2a;
+      color: #cccccc;
+      border: 1px solid #444444;
+      border-radius: 4px;
+    }
+    section {
+      background-color: #1c1c1c;
+      border: 1px solid #444444;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 8px;
+      max-width: 900px;
+    }
+    #montoSugerido, #resumenSesion {
+      background-color: #2a2a2a;
+      border: 1px solid #d4af37;
+      padding: 12px;
+      margin: 15px 0;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #d4af37;
+      font-weight: bold;
+    }
+    #listaOperaciones li {
+      background-color: #2c2c2c;
+      padding: 10px;
+      margin-bottom: 6px;
+      border-left: 4px solid #d4af37;
+      border-radius: 4px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
-  <div id="intro">
+<div id="inicio">
+  <section>
     <h1>GT3.0 – Sistema Operativo para Traders</h1>
+    <p style="text-align:center; font-size:16px;">
+      Herramienta operativa, emocional y filosófica que acompaña al trader trazado en tiempo real.<br>
+      Calcula, ejecuta y reflexiona según tu perfil. No solo opera: te acompaña.
+    </p>
+    <button onclick="mostrarConfig()">🛠️ Ir a configuración</button>
+    <button id="botonSistema" onclick="mostrarSistema()" disabled>🚀 Entrar al sistema operativo</button>
+  </section>
 
-    <section id="readmeContenido">
-      <h2>📘 Presentación del Sistema</h2>
-      <p>GT3.0 es una herramienta operativa, emocional y filosófica diseñada para acompañar al trader en tiempo real. No es solo un software: es un sistema de pensamiento que adapta sus decisiones al perfil emocional, técnico y estratégico del operador.</p>
+  <section>
+    <h2>📘 Presentación técnica (README)</h2>
+    <p>GT3.0 busca que el trader mantenga coherencia entre su capital, sus objetivos y su estado emocional. Cada sesión es un ciclo completo que comienza con la viabilidad, ejecuta bajo estructura y termina con reflexión trazada.</p>
+    <h3>🛠️ Funcionalidades:</h3>
+    <ul>
+      <li>Cálculo adaptativo según capital, riesgo y meta</li>
+      <li>Registro con ID único por fecha, hora y operador</li>
+      <li>Cierre emocional por ratio (W/L)</li>
+      <li>Descarga automática del resumen `.txt`</li>
+      <li>Protección opcional por contraseña</li>
+      <li>Preparado para expansión por broker o métricas mensuales</li>
+    </ul>
+    <h3>🔐 Autoría y visión</h3>
+    <p>GT3.0 es trazado por <a href="https://github.com/facublogg" target="_blank" style="color:#d4af37;">Facundo</a> como base evolutiva para traders conscientes y congruentes.</p>
+  </section>
+</div>
+<div id="configPanel" style="display:none;">
+  <section>
+    <h2>🔧 Configuración Inicial</h2>
+    <label>Nombre del operador:</label>
+    <input type="text" id="nombre" />
+    <label>Capital disponible:</label>
+    <input type="number" id="capital" />
+    <label>Broker:</label>
+    <input type="text" id="broker" />
+    <label>Payout:</label>
+    <input type="number" id="payout" value="0.88" step="0.0001" />
+    <label>Nivel de Trader:</label>
+    <select id="nivelTrader">
+      <option value="Iniciante">Iniciante</option>
+      <option value="Intermedio">Intermedio</option>
+      <option value="Avanzado">Avanzado</option>
+    </select>
+    <label>Nivel de Riesgo:</label>
+    <select id="nivelRiesgo">
+      <option value="Conservador">Conservador</option>
+      <option value="Moderado">Moderado</option>
+      <option value="Expuesto">Expuesto</option>
+    </select>
+    <label>Modo Operativo:</label>
+    <select id="modoOperativo">
+      <option value="Fijo">Fijo</option>
+      <option value="Adaptativo">Adaptativo</option>
+      <option value="Compuesto">Compuesto</option>
+    </select>
+    <label>Meta diaria (opcional):</label>
+    <input type="number" id="metaDiaria" />
+    <button onclick="iniciarSesion()">🟢 Iniciar sesión GT3.0</button>
+    <button onclick="mostrarInicio()">← Volver al inicio</button>
+  </section>
+</div>
 
-      <h3>🎯 Propósito</h3>
-      <p>GT3.0 busca que el trader mantenga coherencia entre su capital, sus objetivos y su estado emocional. Cada sesión es un ciclo completo que comienza con la viabilidad, ejecuta bajo estructura y termina con reflexión trazada.</p>
+<div id="sistemaPanel" style="display:none;">
+  <section>
+    <h2>📈 Sistema Operativo GT3.0</h2>
+    <div id="datosSesion"></div>
+    <button onclick="calcularMonto()">Calcular monto sugerido</button>
+    <div id="montoSugerido"></div>
+    <label>Monto editable:</label>
+    <input type="number" id="montoEditable" />
+    <h3>Resultado de la operación:</h3>
+    <button onclick="registrarResultado('W')">✅ Win</button>
+    <button onclick="registrarResultado('L')">❌ Loss</button>
+    <button onclick="cerrarSesion()">📥 Cerrar sesión</button>
+    <button onclick="guardarSesion()">💾 Guardar sesión</button>
+    <button onclick="nuevaSesion()">🔄 Nueva sesión</button>
+    <input type="text" id="idConsulta" placeholder="🔍 ID para historial" />
+    <button onclick="consultarHistorial()">Consultar historial</button>
+    <div id="resultadoConsulta"></div>
+    <h2>🧾 Resumen final de sesión</h2>
+    <div id="resumenSesion"></div>
+    <button onclick="mostrarInicio()">← Volver al inicio</button>
+  </section>
 
-      <h3>🛠️ Funcionalidades</h3>
-      <ul>
-        <li>Cálculo adaptativo de montos por operación según capital, riesgo y meta trazada</li>
-        <li>Registro de operaciones con ID único por fecha, hora y nombre de operador</li>
-        <li>Cierre emocional de sesión según ratio alcanzado (W/L)</li>
-        <li>Descarga automática del resumen en <code>.txt</code> con todas las operaciones</li>
-        <li>Protección opcional por contraseña para trazado privado</li>
-        <li>Preparado para expansión por broker, historial o métricas mensuales</li>
-      </ul>
+  <section>
+    <h2>🗂️ Registro de Operaciones</h2>
+    <ul id="listaOperaciones"></ul>
+  </section>
+</div>
 
-      <h3>📦 Estructura</h3>
-      <ul>
-        <li><code>index.html</code>: Interfaz interactiva con configuración inicial y sesión operativa</li>
-        <li><code>script.js</code>: Lógica del sistema GT3.0 (cálculo, ejecución, guardado, adaptabilidad)</li>
-        <li><code>style.css</code>: Estilos opcionales para visual coherente (si se incluye)</li>
-      </ul>
+<script src="script.js"></script>
+<script>
+  function mostrarInicio() {
+    document.getElementById("inicio").style.display = "block";
+    document.getElementById("configPanel").style.display = "none";
+    document.getElementById("sistemaPanel").style.display = "none";
+  }
 
-      <h3>🔐 Autoría y visión</h3>
-      <p>GT3.0 es trazado por <a href="https://github.com/facublogg" target="_blank" style="color:#d4af37;">Facundo</a>, como parte de una visión de trading consciente, modular y mentor. El sistema se ofrece como base evolutiva para quienes buscan no sólo operar, sino operar con sentido.</p>
+  function mostrarConfig() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("configPanel").style.display = "block";
+    document.getElementById("sistemaPanel").style.display = "none";
+  }
 
-      <h3>📘 Nota final</h3>
-      <p>Este repositorio no representa asesoramiento financiero. GT3.0 es una herramienta de uso personal trazada desde la experiencia operativa del creador.</p>
+  function mostrarSistema() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("configPanel").style.display = "none";
+    document.getElementById("sistemaPanel").style.display = "block";
+  }
 
-      <button onclick="mostrarSistema()">🚀 Ingresar al sistema operativo</button>
-    </section>
-  </div>
+  function validarConfiguracion() {
+    const nombre = document.getElementById("nombre").value.trim();
+    const capital = document.getElementById("capital").value.trim();
+    const broker = document.getElementById("broker").value.trim();
+    const boton = document.getElementById("botonSistema");
+    boton.disabled = !(nombre && capital && broker);
+  }
 
-  <div id="container" style="display:none;">
-    <section id="config">
-      <h2>🔧 Configuración Inicial</h2>
-      <label>Nombre del operador:</label><input type="text" id="nombre" />
-      <label>Capital disponible:</label><input type="number" id="capital" />
-      <label>Broker:</label><input type="text" id="broker" />
-      <label>Payout:</label><input type="number" id="payout" value="0.88" step="0.0001" />
-      <label>Nivel de Trader:</label>
-      <select id="nivelTrader">
-        <option value="Iniciante">Iniciante</option>
-        <option value="Intermedio">Intermedio</option>
-        <option value="Avanzado">Avanzado</option>
-      </select>
-      <label>Nivel de Riesgo:</label>
-      <select id="nivelRiesgo">
-        <option value="Conservador">Conservador</option>
-        <option value="Moderado">Moderado</option>
-        <option value="Expuesto">Expuesto</option>
-      </select>
-      <label>Modo Operativo:</label>
-      <select id="modoOperativo">
-        <option value="Fijo">Fijo</option>
-        <option value="Adaptativo">Adaptativo</option>
-        <option value="Compuesto">Compuesto</option>
-      </select>
-      <label>Meta diaria (opcional):</label><input type="number" id="metaDiaria" />
-      <button onclick="iniciarSesion()">🟢 Iniciar sesión GT3.0</button>
-    </section>
-
-    <section id="estadoSesion" style="display:none;">
-      <h2>📈 Sesión Activa</h2>
-      <div id="datosSesion"></div>
-      <button onclick="calcularMonto()">Calcular monto sugerido</button>
-      <div id="montoSugerido"></div>
-      <label>Monto editable:</label><input type="number" id="montoEditable" />
-      <h3>Resultado de la operación:</h3>
-      <button onclick="registrarResultado('W')">✅ Win</button>
-      <button onclick="registrarResultado('L')">❌ Loss</button>
-      <button onclick="cerrarSesion()">📥 Cerrar sesión</button>
-      <button onclick="guardarSesion()">💾 Guardar sesión</button>
-      <button onclick="nuevaSesion()">🔄 Nueva sesión</button>
-      <input type="text" id="idConsulta" placeholder="🔍 ID para historial" />
-      <button onclick="consultarHistorial()">Consultar historial</button>
-      <div id="resultadoConsulta"></div>
-      <h2>🧾 Resumen final de sesión</h2>
-      <div id="resumenSesion"></div>
-      <button onclick="volverAlInicio()">← Volver al inicio</button>
-    </section>
-
-    <section id="registroOperaciones" style="display:none;">
-      <h2>🧾 Registro de Operaciones</h2>
-      <ul id="listaOperaciones"></ul>
-    </section>
-  </div>
-
-  <script src="script.js"></script>
-  <script>
-    function mostrarSistema() {
-      document.getElementById("intro").style.display = "none";
-      document.getElementById("container").style.display = "block";
-    }
-
-    function volverAlInicio() {
-      document.getElementById("container").style.display = "none";
-      document.getElementById("intro").style.display = "block";
-    }
-  </script>
+  document.getElementById("nombre").addEventListener("input", validarConfiguracion);
+  document.getElementById("capital").addEventListener("input", validarConfiguracion);
+  document.getElementById("broker").addEventListener("input", validarConfiguracion);
+</script>
 </body>
 </html>
