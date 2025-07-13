@@ -8,27 +8,56 @@
     body { background-color: #1c1c1c; color: #cccccc; font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; margin: 0; padding: 0; }
     #intro, #container { max-width: 900px; margin: auto; padding: 40px 25px; }
     h1 { font-size: 28px; margin-bottom: 15px; color: #d4af37; text-align: center; }
-    p { font-size: 16px; line-height: 1.6; text-align: center; margin-bottom: 30px; }
-    button { background-color: #2a2a2a; color: #cccccc; border: 1px solid #444444; border-radius: 6px; padding: 12px 20px; font-size: 14px; cursor: pointer; margin: 5px; transition: background-color 0.2s ease; }
+    h2, h3 { color: #d4af37; margin-bottom: 15px; }
+    p, li { font-size: 16px; line-height: 1.6; }
+    button { background-color: #2a2a2a; color: #cccccc; border: 1px solid #444444; border-radius: 6px; padding: 12px 20px; font-size: 14px; cursor: pointer; margin: 10px 5px 0; transition: background-color 0.2s ease; }
     button:hover { background-color: #3a3a3a; }
     section { background-color: #1c1c1c; border: 1px solid #444444; padding: 20px; margin-bottom: 30px; border-radius: 8px; }
-    h2, h3 { color: #d4af37; margin-bottom: 15px; }
     label { display: block; margin-top: 12px; font-weight: bold; }
     input, select { width: 100%; padding: 10px; font-size: 14px; margin-top: 6px; background-color: #2a2a2a; color: #cccccc; border: 1px solid #444444; border-radius: 4px; }
     #montoSugerido { background-color: #2a2a2a; border: 1px solid #444444; padding: 12px; border-radius: 6px; margin: 15px 0; font-size: 15px; color: #d4af37; font-weight: bold; }
     #listaOperaciones li { background-color: #2c2c2c; padding: 10px; margin-bottom: 6px; border-left: 4px solid #d4af37; border-radius: 4px; font-size: 14px; }
     #resumenSesion { background-color: #2a2a2a; border: 1px solid #d4af37; padding: 18px; border-radius: 8px; font-size: 17px; color: #cccccc; margin-top: 25px; }
+    #readmeContenido ul { list-style-type: disc; margin-left: 25px; }
   </style>
 </head>
 <body>
 
   <div id="intro">
     <h1>GT3.0 – Sistema Operativo para Traders</h1>
-    <p>
-      GT3.0 es una herramienta operativa, emocional y filosófica. Calcula, ejecuta y cierra cada sesión trazada con propósito.
-      Diseñado para adaptarse a tu perfil y mantener coherencia entre capital, objetivo y estado emocional.
-    </p>
-    <button onclick="mostrarSistema()">🚀 Ingresar al sistema operativo</button>
+
+    <section id="readmeContenido">
+      <h2>📘 Presentación del Sistema</h2>
+      <p>GT3.0 es una herramienta operativa, emocional y filosófica diseñada para acompañar al trader en tiempo real. No es solo un software: es un sistema de pensamiento que adapta sus decisiones al perfil emocional, técnico y estratégico del operador.</p>
+
+      <h3>🎯 Propósito</h3>
+      <p>GT3.0 busca que el trader mantenga coherencia entre su capital, sus objetivos y su estado emocional. Cada sesión es un ciclo completo que comienza con la viabilidad, ejecuta bajo estructura y termina con reflexión trazada.</p>
+
+      <h3>🛠️ Funcionalidades</h3>
+      <ul>
+        <li>Cálculo adaptativo de montos por operación según capital, riesgo y meta trazada</li>
+        <li>Registro de operaciones con ID único por fecha, hora y nombre de operador</li>
+        <li>Cierre emocional de sesión según ratio alcanzado (W/L)</li>
+        <li>Descarga automática del resumen en <code>.txt</code> con todas las operaciones</li>
+        <li>Protección opcional por contraseña para trazado privado</li>
+        <li>Preparado para expansión por broker, historial o métricas mensuales</li>
+      </ul>
+
+      <h3>📦 Estructura</h3>
+      <ul>
+        <li><code>index.html</code>: Interfaz interactiva con configuración inicial y sesión operativa</li>
+        <li><code>script.js</code>: Lógica del sistema GT3.0 (cálculo, ejecución, guardado, adaptabilidad)</li>
+        <li><code>style.css</code>: Estilos opcionales para visual coherente (si se incluye)</li>
+      </ul>
+
+      <h3>🔐 Autoría y visión</h3>
+      <p>GT3.0 es trazado por <a href="https://github.com/facublogg" target="_blank" style="color:#d4af37;">Facundo</a>, como parte de una visión de trading consciente, modular y mentor. El sistema se ofrece como base evolutiva para quienes buscan no sólo operar, sino operar con sentido.</p>
+
+      <h3>📘 Nota final</h3>
+      <p>Este repositorio no representa asesoramiento financiero. GT3.0 es una herramienta de uso personal trazada desde la experiencia operativa del creador.</p>
+
+      <button onclick="mostrarSistema()">🚀 Ingresar al sistema operativo</button>
+    </section>
   </div>
 
   <div id="container" style="display:none;">
@@ -56,8 +85,7 @@
         <option value="Adaptativo">Adaptativo</option>
         <option value="Compuesto">Compuesto</option>
       </select>
-      <label>Meta diaria (opcional):</label>
-      <input type="number" id="metaDiaria" />
+      <label>Meta diaria (opcional):</label><input type="number" id="metaDiaria" />
       <button onclick="iniciarSesion()">🟢 Iniciar sesión GT3.0</button>
     </section>
 
@@ -78,6 +106,7 @@
       <div id="resultadoConsulta"></div>
       <h2>🧾 Resumen final de sesión</h2>
       <div id="resumenSesion"></div>
+      <button onclick="volverAlInicio()">← Volver al inicio</button>
     </section>
 
     <section id="registroOperaciones" style="display:none;">
@@ -91,6 +120,11 @@
     function mostrarSistema() {
       document.getElementById("intro").style.display = "none";
       document.getElementById("container").style.display = "block";
+    }
+
+    function volverAlInicio() {
+      document.getElementById("container").style.display = "none";
+      document.getElementById("intro").style.display = "block";
     }
   </script>
 </body>
