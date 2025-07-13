@@ -118,15 +118,18 @@ function ejecutarOperacion(resultado) {
   if (resultado === "win") contadorWin++;
   else contadorLoss++;
 
+  const resultadoTotal = resultado === "win" ? monto + rendimiento : 0;
+
   operaciones.push({
     numero: operacionNumero,
     resultado: resultado.toUpperCase(),
     monto,
-    ganancia: resultado === "win" ? rendimiento : -monto
+    ganancia: rendimiento.toFixed(2),
+    resultadoTotal: resultadoTotal.toFixed(2)
   });
 
   const li = document.createElement("li");
-  li.textContent = `#${operacionNumero} ${resultado.toUpperCase()} – Monto: USD ${monto} – Resultado: USD ${config.capital.toFixed(2)}`;
+  li.textContent = `#${operacionNumero} ${resultado.toUpperCase()} – Invertido: USD ${monto} – Ganancia: USD ${rendimiento.toFixed(2)} – Resultado: USD ${resultadoTotal.toFixed(2)}`;
   document.getElementById("listaOperaciones").appendChild(li);
   operacionNumero++;
 
@@ -166,7 +169,7 @@ function guardarSesion() {
 
   let contenido = `GT3.0 – Registro de sesión\n\n`;
   operaciones.forEach(op => {
-    contenido += `#${op.numero} ${op.resultado} – Monto: USD ${op.monto} – Cambio: USD ${op.ganancia}\n`;
+    contenido += `#${op.numero} ${op.resultado} – Invertido: USD ${op.monto} – Ganancia: USD ${op.ganancia} – Resultado: USD ${op.resultadoTotal}\n`;
   });
   contenido += `\n${resumenSesion}`;
 
