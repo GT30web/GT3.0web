@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GT3.0 Sistema Operativo</title>
   <style>
-    body {
-      background-color: #1c1c1c;
-      color: #cccccc;
-      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    body { background-color: #1c1c1c; color: #cccccc; font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; margin: 0; padding: 0; }
     h1 { font-size: 28px; color: #d4af37; text-align: center; margin: 20px 0; }
     h2, h3 { color: #d4af37; margin-bottom: 15px; }
     button {
@@ -68,41 +62,21 @@
   <section>
     <h1>GT3.0 – Sistema Operativo para Traders</h1>
     <p style="text-align:center; font-size:16px;">
-      Herramienta operativa, emocional y filosófica que acompaña al trader trazado en tiempo real.<br>
+      Herramienta operativa, emocional y filosófica trazada en tiempo real.<br>
       Calcula, ejecuta y reflexiona según tu perfil. No solo opera: te acompaña.
     </p>
     <button onclick="mostrarConfig()">🛠️ Ir a configuración</button>
     <button id="botonSistema" onclick="mostrarSistema()" disabled>🚀 Entrar al sistema operativo</button>
   </section>
-
-  <section>
-    <h2>📘 Presentación técnica (README)</h2>
-    <p>GT3.0 busca que el trader mantenga coherencia entre su capital, sus objetivos y su estado emocional. Cada sesión es un ciclo completo que comienza con la viabilidad, ejecuta bajo estructura y termina con reflexión trazada.</p>
-    <h3>🛠️ Funcionalidades:</h3>
-    <ul>
-      <li>Cálculo adaptativo según capital, riesgo y meta</li>
-      <li>Registro con ID único por fecha, hora y operador</li>
-      <li>Cierre emocional por ratio (W/L)</li>
-      <li>Descarga automática del resumen `.txt`</li>
-      <li>Protección opcional por contraseña</li>
-      <li>Preparado para expansión por broker o métricas mensuales</li>
-    </ul>
-    <h3>🔐 Autoría y visión</h3>
-    <p>GT3.0 es trazado por <a href="https://github.com/facublogg" target="_blank" style="color:#d4af37;">Facundo</a> como base evolutiva para traders conscientes y congruentes.</p>
-  </section>
 </div>
-  
+
 <div id="configPanel" style="display:none;">
   <section>
     <h2>🔧 Configuración Inicial</h2>
-    <label>Nombre del operador:</label>
-    <input type="text" id="nombre" />
-    <label>Capital disponible:</label>
-    <input type="number" id="capital" />
-    <label>Broker:</label>
-    <input type="text" id="broker" />
-    <label>Payout:</label>
-    <input type="number" id="payout" value="0.88" step="0.0001" />
+    <label>Nombre del operador:</label><input type="text" id="nombre" />
+    <label>Capital disponible:</label><input type="number" id="capital" />
+    <label>Broker:</label><input type="text" id="broker" />
+    <label>Payout:</label><input type="number" id="payout" value="0.88" step="0.0001" />
     <label>Nivel de Trader:</label>
     <select id="nivelTrader">
       <option value="Iniciante">Iniciante</option>
@@ -121,9 +95,7 @@
       <option value="Adaptativo">Adaptativo</option>
       <option value="Compuesto">Compuesto</option>
     </select>
-    <label>Meta diaria (opcional):</label>
-    <input type="number" id="metaDiaria" />
-    <button onclick="iniciarSesion()">🟢 Iniciar sesión GT3.0</button>
+    <label>Meta diaria (opcional):</label><input type="number" id="metaDiaria" />
     <button onclick="mostrarInicio()">← Volver al inicio</button>
   </section>
 </div>
@@ -134,8 +106,7 @@
     <div id="datosSesion"></div>
     <button onclick="calcularMonto()">Calcular monto sugerido</button>
     <div id="montoSugerido"></div>
-    <label>Monto editable:</label>
-    <input type="number" id="montoEditable" />
+    <label>Monto editable:</label><input type="number" id="montoEditable" />
     <h3>Resultado de la operación:</h3>
     <button onclick="registrarResultado('W')">✅ Win</button>
     <button onclick="registrarResultado('L')">❌ Loss</button>
@@ -174,6 +145,7 @@
     document.getElementById("inicio").style.display = "none";
     document.getElementById("configPanel").style.display = "none";
     document.getElementById("sistemaPanel").style.display = "block";
+    iniciarSesion(); // 🔹 inicia sesión automáticamente al ingresar
   }
 
   function validarConfiguracion() {
