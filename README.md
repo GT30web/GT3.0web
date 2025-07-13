@@ -12,20 +12,20 @@ GT3.0 busca que el trader mantenga coherencia entre su capital, sus objetivos y 
 
 ## 🛠️ Funcionalidades
 
-- Cálculo adaptativo de montos por operación según capital, riesgo y meta trazada
-- Registro de operaciones con ID único por fecha, hora y nombre de operador
-- Cierre emocional de sesión según ratio alcanzado (W/L)
-- Descarga automática del resumen en `.txt` con todas las operaciones
-- Protección opcional por contraseña para trazado privado
-- Preparado para expansión por broker, historial o métricas mensuales
+- Cálculo adaptativo de montos por operación según capital, riesgo y meta trazada  
+- Registro de operaciones con ID único por fecha, hora y nombre de operador  
+- Cierre emocional de sesión según ratio alcanzado (W/L)  
+- Descarga automática del resumen en `.txt` con todas las operaciones  
+- Protección opcional por contraseña para trazado privado  
+- Preparado para expansión por broker, historial o métricas mensuales  
 
 ---
 
 ## 📦 Estructura
 
-- `index.html`: Interfaz interactiva con configuración inicial y sesión operativa
-- `script.js`: Lógica del sistema GT3.0 (calculo, ejecución, guardado, adaptabilidad)
-- `style.css`: Estilos opcionales para visual coherente (si se incluye)
+- `index.html`: Interfaz interactiva con configuración inicial y sesión operativa  
+- `script.js`: Lógica del sistema GT3.0 (cálculo, ejecución, guardado, adaptabilidad)  
+- `style.css`: Estilos opcionales para visual coherente (si se incluye)  
 
 ---
 
@@ -38,4 +38,3 @@ GT3.0 es trazado por [Facundo](https://github.com/facublogg), como parte de una 
 ## 📘 Nota final
 
 Este repositorio no representa asesoramiento financiero. GT3.0 es una herramienta de uso personal trazada desde la experiencia operativa del creador.
-
