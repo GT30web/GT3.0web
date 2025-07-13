@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GT3.0 Sistema Operativo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 25px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 10px 18px;
+      font-size: 14px;
+      background-color: #007acc;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #montoSugerido {
+      background-color: #eef6ff;
+      padding: 12px;
+      border: 1px solid #bcd9f4;
+      border-radius: 6px;
+      margin: 15px 0;
+      font-weight: bold;
+      color: #0a4569;
+    }
+
+    #listaOperaciones li {
+      background-color: #f1f1f1;
+      padding: 8px;
+      margin-bottom: 6px;
+      border-left: 4px solid #007acc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>GT3.0 – Sistema Operativo para Traders</h1>
+
+    <section id="config">
+      <h2>🔧 Configuración Inicial</h2>
+      <label>Nombre del operador:</label>
+      <input type="text" id="nombre" />
+      <label>Capital disponible:</label>
+      <input type="number" id="capital" />
+      <label>Broker:</label>
+      <input type="text" id="broker" />
+      <label>Payout:</label>
+      <input type="number" id="payout" value="0.88" step="0.0001" />
+      <label>Nivel de Trader:</label>
+      <select id="nivelTrader">
+        <option value="Iniciante">Iniciante</option>
+        <option value="Intermedio">Intermedio</option>
+        <option value="Avanzado">Avanzado</option>
+      </select>
+      <label>Nivel de Riesgo:</label>
+      <select id="nivelRiesgo">
+        <option value="Conservador">Conservador</option>
+        <option value="Moderado">Moderado</option>
+        <option value="Expuesto">Expuesto</option>
+      </select>
+      <label>Modo Operativo:</label>
+      <select id="modoOperativo">
+        <option value="Fijo">Fijo</option>
+        <option value="Adaptativo">Adaptativo</option>
+        <option value="Compuesto">Compuesto</option>
+      </select>
+      <label>Meta diaria (opcional):</label>
+      <input type="number" id="metaDiaria" />
+      <button onclick="iniciarSesion()">🟢 Iniciar sesión GT3.0</button>
+    </section>
+
+    <section id="estadoSesion" style="display:none;">
+      <h2>📈 Sesión Activa</h2>
+      <div id="datosSesion"></div>
+      <button onclick="calcularMonto()">Calcular monto sugerido</button>
+      <div id="montoSugerido"></div>
+      <label>Monto editable:</label>
+      <input type="number" id="montoEditable" />
+      <h3>Resultado de la operación:</h3>
+      <button onclick="registrarResultado('W')">W</button>
+      <button onclick="registrarResultado('L')">L</button>
+      <button onclick="cerrarSesion()">Cerrar sesión</button>
+      <button onclick="guardarSesion()">Guardar sesión</button>
+      <button onclick="nuevaSesion()">Nueva sesión</button>
+      <input type="text" id="idConsulta" placeholder="ID de sesión para historial" />
+      <button onclick="consultarHistorial()">Consultar historial</button>
+      <div id="resultadoConsulta"></div>
+    </section>
+
+    <section id="registroOperaciones" style="display:none;">
+      <h2>🧾 Registro de Operaciones</h2>
+      <ul id="listaOperaciones"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
