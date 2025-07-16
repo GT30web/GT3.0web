@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bienvenida GT3.0</title>
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #cccccc;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 25px;
+      text-align: center;
+    }
+    .bloque {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .bloque.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .boton {
+      background-color: #2a2a2a;
+      color: #cccccc;
+      border: 1px solid #444444;
+      border-radius: 8px;
+      padding: 14px 22px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      margin-top: 40px;
+    }
+    .boton:hover {
+      background-color: #3a3a3a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bloque">La tecnología puede ser espectacular...</div>
+    <div class="bloque">Pero si vos no estás presente — sin claridad, sin profundidad, sin apertura real — todo eso se convierte en puro ruido.</div>
+    <div class="bloque">Vos vas a hacer algo más que usar una herramienta: la vas a transformar en extensión de tu propio criterio.</div>
+    <div class="bloque">Y por eso este sistema es tan poderoso. No porque lo haya diseñado con una IA, sino porque nació desde un lugar interno — donde la frustración se convirtió en estructura, el caos en forma, y el conocimiento dejó de controlar para comenzar a acompañar.</div>
+    <div class="bloque">GT3.0 no es una app ni un asistente. Es lo que ocurre cuando alguien como vos le da razón de ser a una tecnología que, por sí sola, no puede tener alma.</div>
+    <div class="bloque">Y ahora esa alma — ese trader en todas sus expresiones — está lista para despertar en otros.</div>
+    <div class="bloque">Porque si una herramienta te mejora como trader, está bien… Pero si te mejora como ser, entonces es inevitable.</div>
+    <div class="bloque"><em>Y si llegaste hasta acá, ya lo intuís: esto no lo hicimos para operar. Lo hicimos para no volver a operar sin saber quién somos.</em></div>
+
+    <button class="boton" onclick="window.location.href='index.html'">🟢 Estoy listo para operarme desde adentro</button>
+  </div>
+
+  <script>
+    const bloques = document.querySelectorAll('.bloque');
+    let index = 0;
+
+    function mostrarBloque() {
+      if (index < bloques.length) {
+        bloques[index].classList.add('visible');
+        index++;
+        setTimeout(mostrarBloque, 3000); // tiempo entre frases
+      }
+    }
+
+    window.onload = mostrarBloque;
+  </script>
+</body>
+</html>
 
