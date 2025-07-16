@@ -5,41 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bienvenida GT3.0</title>
 
-  <!-- Fuente sobria con inclinación -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet" />
+  <!-- Fuente sobria -->
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" />
 
   <style>
     body {
-  background-image: url('fondo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #111111;
-  font-family: 'Courier Prime', monospace;
-  font-style: italic;
-  margin: 0;
-  padding: 0;
-}
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      color: #111111;
+      font-family: 'Courier Prime', monospace;
+      font-style: italic;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 60px 25px;
+      width: 100vw;
+      height: 100vh;
+      padding: 40px 50px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       text-align: center;
     }
 
-    .bloque {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1.6s ease, transform 1.6s ease;
-      margin-bottom: 45px;
-      font-size: 28px;
-      line-height: 2;
-    }
-
-    .bloque.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .texto {
+      font-size: 32px;
+      line-height: 1.6;
+      max-width: 100%;
     }
 
     .boton {
@@ -47,12 +48,11 @@
       color: #f5f5dc;
       border: none;
       border-radius: 8px;
-      padding: 16px 24px;
-      font-size: 18px;
+      padding: 16px 30px;
+      font-size: 20px;
       cursor: pointer;
-      transition: background-color 0.2s ease;
-      margin-top: 50px;
       font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.2s ease;
     }
 
     .boton:hover {
@@ -60,38 +60,24 @@
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-    <div class="bloque">La tecnología puede ser espectacular...</div>
-    <div class="bloque">Pero si vos no estás presente — sin claridad, sin profundidad, sin apertura real — todo eso se convierte en puro ruido.</div>
-    <div class="bloque">Vos vas a hacer algo más que usar una herramienta: la vas a transformar en extensión de tu propio criterio.</div>
-    <div class="bloque">Y por eso este sistema es tan poderoso...</div>
-    <div class="bloque">No porque lo haya diseñado con una IA, sino porque nació desde un lugar interno.</div>
-    <div class="bloque">— Donde la frustración se convirtió en estructura, el caos en forma, y el conocimiento dejó de controlar para comenzar a acompañar.</div>
-    <div class="bloque">GT3.0 no es una app ni un asistente. Es lo que ocurre cuando alguien como vos le da razón de ser a una tecnología que, por sí sola, no puede tener alma.</div>
-    <div class="bloque">Y ahora esa alma — ese trader en todas sus expresiones — está lista para despertar en otros.</div>
-    <div class="bloque">Porque si una herramienta te mejora como trader, está bien…</div>
-    <div class="bloque">Pero si te mejora como ser...</div>
-    <div class="bloque">Entonces es inevitable.</div>
-    <div class="bloque"><em>Y si llegaste hasta acá, ya lo intuís: esto no lo hicimos para operar. Lo hicimos para no volver a operar sin saber quién somos.</em></div>
+    <div class="texto">
+      La tecnología puede ser espectacular...<br><br>
+      Pero si vos no estás presente — sin claridad, sin profundidad, sin apertura real — todo eso se convierte en puro ruido.<br><br>
+      Vos vas a hacer algo más que usar una herramienta: la vas a transformar en extensión de tu propio criterio.<br><br>
+      Y por eso este sistema es tan poderoso...<br><br>
+      No porque lo haya diseñado con una IA, sino porque nació desde un lugar interno.<br><br>
+      — Donde la frustración se convirtió en estructura, el caos en forma, y el conocimiento dejó de controlar para comenzar a acompañar.<br><br>
+      GT3.0 no es una app ni un asistente. Es lo que ocurre cuando alguien como vos le da razón de ser a una tecnología que, por sí sola, no puede tener alma.<br><br>
+      Y ahora esa alma — ese trader en todas sus expresiones — está lista para despertar en otros.<br><br>
+      Porque si una herramienta te mejora como trader, está bien…<br>
+      Pero si te mejora como ser...<br>
+      Entonces es inevitable.<br><br>
+      <em>Y si llegaste hasta acá, ya lo intuís: esto no lo hicimos para operar. Lo hicimos para no volver a operar sin saber quién somos.</em>
+    </div>
 
     <button class="boton" onclick="window.location.href='index.html'">🟢 Estoy listo para operarme desde adentro</button>
   </div>
-
-  <script>
-    const bloques = document.querySelectorAll('.bloque');
-    let index = 0;
-
-    function mostrarBloque() {
-      if (index < bloques.length) {
-        bloques[index].classList.add('visible');
-        index++;
-        setTimeout(mostrarBloque, 6500);
-      }
-    }
-
-    window.onload = mostrarBloque;
-  </script>
 </body>
 </html>
