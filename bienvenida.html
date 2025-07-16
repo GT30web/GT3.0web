@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bienvenida GT3.0</title>
 
-  <!-- Fuente manuscrita elegante -->
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap" rel="stylesheet">
+  <!-- Fuente sobria con inclinación -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet" />
 
   <style>
     body {
-      background-color: #1c1c1c;
-      color: #cccccc;
-      font-family: 'Dancing Script', cursive;
+      background-image: url('fondo.jpg'); /* reemplazá con el nombre real del fondo */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #111111;
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
       margin: 0;
       padding: 0;
     }
@@ -25,15 +29,13 @@
     }
 
     .bloque {
-  font-family: 'Courier Prime', monospace;
-  font-style: italic;
-  font-size: 24px;
-  line-height: 2;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.6s ease, transform 1.6s ease;
-  margin-bottom: 45px;
-}
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.6s ease, transform 1.6s ease;
+      margin-bottom: 45px;
+      font-size: 24px;
+      line-height: 2;
+    }
 
     .bloque.visible {
       opacity: 1;
@@ -41,9 +43,9 @@
     }
 
     .boton {
-      background-color: #2a2a2a;
-      color: #cccccc;
-      border: 1px solid #444444;
+      background-color: #111111;
+      color: #f5f5dc;
+      border: none;
       border-radius: 8px;
       padding: 16px 24px;
       font-size: 18px;
@@ -54,7 +56,7 @@
     }
 
     .boton:hover {
-      background-color: #3a3a3a;
+      background-color: #333333;
     }
   </style>
 </head>
@@ -85,7 +87,7 @@
       if (index < bloques.length) {
         bloques[index].classList.add('visible');
         index++;
-        setTimeout(mostrarBloque, 6500); // pausa más contemplativa
+        setTimeout(mostrarBloque, 6500);
       }
     }
 
