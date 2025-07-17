@@ -23,9 +23,9 @@ GT3.0 busca que el trader mantenga coherencia entre su capital, sus objetivos y 
 
 ## 📦 Estructura
 
-- `index.html`: Interfaz interactiva con configuración inicial y sesión operativa  
-- `script.js`: Lógica del sistema GT3.0 (cálculo, ejecución, guardado, adaptabilidad)  
-- `style.css`: Estilos opcionales para visual coherente (si se incluye)  
+- Interfaz interactiva con configuración inicial y sesión operativa  
+- Lógica del sistema GT3.0 (cálculo, ejecución, guardado, adaptabilidad)  
+- Estilos opcionales para visual coherente (si se incluye)  
 
 ---
 
